@@ -4,9 +4,34 @@ src='https://static.matterport.com/showcase-sdk/1.1.0-43-g347d8a3/sdk.js'>
 </head>
 <body>
 
-<iframe width=”853” height=”480”
+<iframe width=”600” height=”200”
 src=”https://my.matterport.com/showcase-beta?m=SxQL3iGyoDo&play=1&play=1”
 frameborder=”0” allowfullscreen allow="vr"
 id=”showcase_iframe”></iframe>
+    
+<script>
+  var iframe = document.getElementById('showcase_iframe');
+
+iframe.addEventListener('load', showcaseLoader, true);
+
+function showcaseLoader() {
+  try {
+    var showcase = window.SHOWCASE_SDK.connect(
+      iframe, // Obtained earlier
+      'd44f658dbf4045c28865e124f4336787', // Your API key
+      '3.0' // SDK version you are using
+      // Use the latest version you can for your app
+      )
+      .then(loadedShowcaseHandler)
+        // refer to docs for Model.Event.MODEL_LOADED
+      .catch(handleError);
+  }
+  catch (e) {
+    console.error(e);
+  }
+};
+</script>
+  <h1>Here we are ....</h1>
+  <a href="https://my.matterport.com/showcase-beta?m=SxQL3iGyoDo&play=1&play=1"><h1>Loading Iframe </h1></a>
 
 </body>
