@@ -3,22 +3,18 @@
 src='https://static.matterport.com/showcase-sdk/1.1.0-43-g347d8a3/sdk.js'>
 </head>
 <body>
-
-<!-- <iframe width=”600” height=”200”
-src=”https://my.matterport.com/showcase-beta?m=SxQL3iGyoDo&play=1&play=1”
-frameborder=”0” allowfullscreen allow="vr"
-id=”showcase_iframe”></iframe> -->
-
-    
-    <iframe width=”300” height=”200”
-src=”index.html”
-id=”showcase_iframe”></iframe>
-
-    
 <script>
+  
+  
   var iframe = document.getElementById('showcase_iframe');
+    
+   
 
 iframe.addEventListener('load', showcaseLoader, true);
+
+window.onload = function(){
+     iframe.setAttribute('src', 'https://my.matterport.com/showcase-beta?m=SxQL3iGyoDo&play=1');
+   } 
 
 function showcaseLoader() {
   try {
@@ -37,6 +33,15 @@ function showcaseLoader() {
   }
 };
 </script>
+
+  
+  <iframe width=”300” height=”200"
+id=”showcase_iframe”></iframe> 
+
+    
+   
+    
+
   <h1>Here we are ....</h1>
   <a href="https://mya-opal.github.io/myvrspace" target="showcase_iframe"><h1>Loading Iframe </h1></a>
 
